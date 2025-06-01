@@ -38,7 +38,12 @@ const affirmations = [
 ];
 
 function showAffirmation() {
+  const sparkle = document.getElementById("sparkle-sound");
+  sparkle.currentTime = 0;
+  sparkle.play();
+
   const random = affirmations[Math.floor(Math.random() * affirmations.length)];
   document.getElementById("character").innerText = random.character;
   document.getElementById("quote").innerText = random.quote;
 }
+
